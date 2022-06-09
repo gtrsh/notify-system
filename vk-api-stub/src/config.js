@@ -5,6 +5,8 @@ import { join } from './utils'
 const schema = S.object()
   .prop('PG_DB', S.string().required())
   .prop('APP_PORT', S.integer().required())
+  .prop('MAX_REQUESTS', S.integer().required())
+  .prop('TIME_WINDOW_MS', S.integer().required())
 
 const config = envSchema({
   schema,
