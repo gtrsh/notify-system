@@ -13,7 +13,7 @@ const config = envSchema({
 
 const dbConfig = {
   client: 'pg',
-  connection: config.PG_DB,
+  connection: config.PG_DB
 }
 
 export {
