@@ -1,6 +1,7 @@
 import * as app from './app'
+import { config } from './config'
 
-const appInstance = app.createApp({})
+const appInstance = app.createApp(config)
 
 await appInstance.listen(3010).catch((err) => {
   console.error(`[ERROR]: App start Exception: ${err.message}`)
