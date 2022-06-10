@@ -10,7 +10,7 @@ const createApp = (opts) => {
       return {
         code: 1,
         description: 'Too frequently',
-        message: `Servive only allow ${context.max} requests per ${context.after} to this endpoint`,
+        message: `Servive only allow ${context.max} requests per ${context.after} to this endpoint`
       }
     }
   }

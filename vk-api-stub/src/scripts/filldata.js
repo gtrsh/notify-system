@@ -1,3 +1,4 @@
+/* eslint-disable */
 import * as fs from 'node:fs/promises'
 import db from '../db'
 import { join } from '../utils'
