@@ -5,7 +5,14 @@ const createApp = (opts) => {
 
   const rateLimitOptions = {
     max: opts.MAX_REQUESTS,
-    timeWindow: opts.TIME_WINDOW_MS
+    timeWindow: opts.TIME_WINDOW_MS,
+    errorResponseBuilder: (request, context) => {
+      return {
+        code: 1,
+        description: 'Too frequently',
+        message: `Servive only allow ${context.max} requests per ${context.after} to this endpoint`,
+      }
+    }
   }
   /* eslint-disable */
   app.register(import('@fastify/rate-limit'), rateLimitOptions)
