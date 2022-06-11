@@ -1,4 +1,5 @@
 import { postNotificationSchema as schema } from './notification.validator'
+import { notificationService } from './notification.service'
 
 const router = (fastify, opts, done) => {
   fastify.post('/api/notification', { schema, attachValidation: true }, async (req, rep) => {
@@ -11,8 +12,9 @@ const router = (fastify, opts, done) => {
         })
     }
 
+    const usersNotified = await notificationService(req.body.ids)
     return {
-      data: []
+      data: usersNotified
     }
   })
 
