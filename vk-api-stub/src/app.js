@@ -16,7 +16,7 @@ const createApp = (opts) => {
   }
   /* eslint-disable */
   app.register(import('@fastify/rate-limit'), rateLimitOptions)
-  app.register(import('./resources/notification'))
+  app.register(import('./resources/vk'))
   app.setErrorHandler(async (error, req, rep) => {
     rep
       .status(500)

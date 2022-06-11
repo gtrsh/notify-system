@@ -1,5 +1,5 @@
-import { postNotificationSchema as schema } from './notification.validator'
-import { notificationService } from './notification.service'
+import { postNotificationSchema as schema } from './vk.validator'
+import { notificationService } from './vk.service'
 
 const router = (fastify, opts, done) => {
   fastify.post('/api/notification', { schema, attachValidation: true }, async (req, rep) => {
