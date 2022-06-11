@@ -17,15 +17,13 @@ const createApp = (opts) => {
   /* eslint-disable */
   app.register(import('@fastify/rate-limit'), rateLimitOptions)
   app.register(import('./resources/notification'))
-  app.errorHandler((error, req, rep) => {
-    if (error.statusCode >= 500) {
-      reply
-        .status(error.statusCode)
-        .send({
-          code: 2,
-          description: 'Server error'
-        })
-    }
+  app.setErrorHandler(async (error, req, rep) => {
+    rep
+      .status(500)
+      .send({
+        code: 2,
+        description: 'Server error'
+      })
   })
   /* eslint-enable */
   return app
