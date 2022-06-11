@@ -5,6 +5,7 @@ import { join } from './utils'
 const schema = S.object()
   .prop('PG_DB', S.string().required())
   .prop('APP_PORT', S.integer().required())
+  .prop('API_VK', S.string().required())
 
 const config = envSchema({
   schema,
