@@ -1,5 +1,5 @@
-const getNotifications = async (db, limit, offset) => {
-  return db('notifications')
+const getNotifications = async (db) => {
+  return db('notifications').select()
 }
 
 const getNotificationData = async (db, id) => {
