@@ -7,7 +7,7 @@ await db.schema
     table.text('name')
     table.text('text_template')
     table.text('status')
-    table.jsonb('data')
+    table.jsonb('nf_data')
     table.timestamp('created_at', { useTz: false }).defaultTo(db.fn.now())
     table.timestamp('updated_at', { useTz: false }).defaultTo(db.fn.now())
   })
