@@ -1,4 +1,6 @@
-export const seed = async (db) => {
+import db from '../db'
+
+const create_table_players = async (db) => {
   await db.schema.createTable('players', (table) => {
     table.increments()
     table.text('vk_id')
@@ -7,3 +9,5 @@ export const seed = async (db) => {
     table.timestamp('updated_at', { useTz: false }).defaultTo(db.fn.now())
   })
 }
+
+await create_table_players(db)
